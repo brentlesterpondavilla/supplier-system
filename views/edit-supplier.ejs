@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Supplier</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background-color: #f9f9f9; color: #333; }
+    h1 { color: #2c3e50; }
+    form { background: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); max-width: 500px; }
+    input, button { padding: 10px; margin: 10px 0; width: 100%; box-sizing: border-box; }
+    button { background-color: #f39c12; color: white; border: none; cursor: pointer; font-weight: bold; }
+    button:hover { background-color: #d68910; }
+    a { display: inline-block; margin-top: 15px; color: #3498db; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <h1>Edit Supplier</h1>
+
+  <form action="/suppliers/edit/<%= supplier._id %>?_method=PUT" method="POST">
+    <input type="text" name="name" value="<%= supplier.name %>" required>
+    <input type="text" name="contactPerson" value="<%= supplier.contactPerson %>" required>
+    <input type="text" name="phone" value="<%= supplier.phone %>" required>
+    <input type="email" name="email" value="<%= supplier.email %>" required>
+    <input type="text" name="address" value="<%= supplier.address %>" required>
+    <button type="submit">Update Supplier</button>
+  </form>
+
+  <a href="/suppliers">&larr; Back to Suppliers List</a>
+
+</body>
+</html>
